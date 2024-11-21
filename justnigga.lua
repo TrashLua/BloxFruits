@@ -453,7 +453,7 @@ function Library:AddWindows()
 	Clicked_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Clicked_9.BorderSizePixel = 0
 	Clicked_9.Size = UDim2.new(1, 0, 1, 0)
-	Clicked_9.Image = "rbxassetid://105332563796698"
+	Clicked_9.Image = "rbxassetid://83429535930475"
 	local OldSize = UDim2.new(0, 500, 0, 300)
 	Clicked_9.Activated:Connect(function()
 		CircleClick(Clicked_9, Mouse.X, Mouse.Y)
@@ -514,7 +514,7 @@ function Library:AddWindows()
 	TextLabel.Position = UDim2.new(0, 65, 0, 2)
 	TextLabel.Size = UDim2.new(0, 165, 0, 35)
 	TextLabel.Font = Enum.Font.GothamBold
-	TextLabel.Text = "- by : realrise.exe | discord.gg/P24sKJYapX"
+	TextLabel.Text = "discord.gg/P24sKJYapX"
 	TextLabel.TextColor3 = Color3.fromRGB(95, 95, 95)
 	TextLabel.TextSize = 13.000
 
