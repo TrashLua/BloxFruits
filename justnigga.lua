@@ -455,9 +455,6 @@ Clicked_9.BorderSizePixel = 0
 Clicked_9.Size = UDim2.new(1, 0, 1, 0)
 Clicked_9.Image = "rbxassetid://83429535930475"
 
-local UICorner_33 = Instance.new("UICorner")
-UICorner_33.CornerRadius = UDim.new(1, 0) 
-UICorner_33.Parent = Clicked_9
 local UICorner_34 = Instance.new("UICorner")
 UICorner_34 .CornerRadius = UDim.new(1, 0) 
 UICorner_34 .Parent = DropShadow_2
