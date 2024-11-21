@@ -474,7 +474,7 @@ end)
 
 UIStroke_15.Parent = Clicked_9
 UIStroke_15.Color = Color3.fromRGB(255, 255, 255)
-UIStroke_15.Transparency = 0.840
+UIStroke_15.Transparency = 1
 
 	Top.Name = "Top"
 	Top.Parent = Main
