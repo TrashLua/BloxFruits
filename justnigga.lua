@@ -446,32 +446,35 @@ function Library:AddWindows()
 	DropShadow_2.ImageTransparency = 0.500
 	DropShadow_2.ScaleType = Enum.ScaleType.Slice
 	DropShadow_2.SliceCenter = Rect.new(49, 49, 450, 450)
+Clicked_9.Name = "Clicked"
+Clicked_9.Parent = UIClose
+Clicked_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Clicked_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Clicked_9.BorderSizePixel = 0
+Clicked_9.Size = UDim2.new(1, 0, 1, 0)
+Clicked_9.Image = "rbxassetid://83429535930475"
 
-	Clicked_9.Name = "Clicked"
-	Clicked_9.Parent = UIClose
-	Clicked_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Clicked_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Clicked_9.BorderSizePixel = 0
-	Clicked_9.Size = UDim2.new(1, 0, 1, 0)
-	Clicked_9.Image = "rbxassetid://83429535930475"
-	local OldSize = UDim2.new(0, 500, 0, 300)
-	Clicked_9.Activated:Connect(function()
-		CircleClick(Clicked_9, Mouse.X, Mouse.Y)
-		if Main.Size.Y.Offset <= 0 then
-			UIStroke.Enabled = true
-			TweenService:Create(Main, TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {Size = OldSize}):Play()
-		else
-			OldSize = Main.Size
-			UIStroke.Enabled = false
-			TweenService:Create(Main, TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {Size = UDim2.new(0, 0, 0, -0)}):Play()
-		end
-	end)
+-- Thêm UICorner
+local UICorner_33 = Instance.new("UICorner")
+UICorner_33.CornerRadius = UDim.new(0, 1) -- Bo góc 1 pixel
+UICorner_33.Parent = Clicked_9
 
-	UICorner_33.Parent = Clicked_9
+local OldSize = UDim2.new(0, 500, 0, 300)
+Clicked_9.Activated:Connect(function()
+	CircleClick(Clicked_9, Mouse.X, Mouse.Y)
+	if Main.Size.Y.Offset <= 0 then
+		UIStroke.Enabled = true
+		TweenService:Create(Main, TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {Size = OldSize}):Play()
+	else
+		OldSize = Main.Size
+		UIStroke.Enabled = false
+		TweenService:Create(Main, TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {Size = UDim2.new(0, 0, 0, -0)}):Play()
+	end
+end)
 
-	UIStroke_15.Parent = Clicked_9
-	UIStroke_15.Color = Color3.fromRGB(255, 255, 255)
-	UIStroke_15.Transparency = 0.840
+UIStroke_15.Parent = Clicked_9
+UIStroke_15.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_15.Transparency = 0.840
 
 	Top.Name = "Top"
 	Top.Parent = Main
@@ -501,7 +504,7 @@ function Library:AddWindows()
 	NameHub.Position = UDim2.new(0, 17, 0, 7) -- Offset : 17
 	NameHub.Size = UDim2.new(0, 100, 0, 25)
 	NameHub.Font = Enum.Font.GothamBold
-	NameHub.Text = "Rise Evo"
+	NameHub.Text = "Rise Hub"
 	NameHub.TextColor3 = Color3.fromRGB(255, 255, 255)
 	NameHub.TextSize = 14.000
 	NameHub.TextXAlignment = Enum.TextXAlignment.Left
