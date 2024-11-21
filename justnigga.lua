@@ -446,35 +446,97 @@ function Library:AddWindows()
 	DropShadow_2.ImageTransparency = 0.500
 	DropShadow_2.ScaleType = Enum.ScaleType.Slice
 	DropShadow_2.SliceCenter = Rect.new(49, 49, 450, 450)
-Clicked_9.Name = "Clicked"
-Clicked_9.Parent = UIClose
-Clicked_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Clicked_9.BackgroundTransparency = 1
-Clicked_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Clicked_9.BorderSizePixel = 0
-Clicked_9.Size = UDim2.new(1, 0, 1, 0)
-Clicked_9.Image = "rbxassetid://83429535930475"
-
-local UICorner_34 = Instance.new("UICorner")
-UICorner_34 .CornerRadius = UDim.new(1, 0) 
-UICorner_34 .Parent = DropShadow_2
-
+    local L_50_ = Instance.new("ScreenGui")
+    local L_51_ = Instance.new("ImageButton")
+    local L_52_ = game:GetService("UserInputService")
+    local L_53_ = game:GetService("TweenService")
+    local L_54_ = Instance.new("UICorner")
+    local L_55_ = Instance.new("Sound")
+    L_50_.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    L_51_.Parent = L_50_
+    L_51_.Size = UDim2.new(0, 50, 0, 50)
+    L_51_.Position = UDim2.new(0.1, 0, 1, - 250)
+    L_51_.BackgroundTransparency = 1
+    L_51_.Image = "rbxassetid://83429535930475"
+    L_54_.Parent = L_51_
+    L_54_.CornerRadius = UDim.new(1, 0)
+    L_55_.Parent = L_51_
+    L_55_.SoundId = "" -- uwu:3
+    L_55_.Volume = 1
+    local function L_56_func(L_653_arg0, L_654_arg1, L_655_arg2)
+        local L_656_ = TweenInfo.new(L_655_arg2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+        local L_657_ = L_53_:Create(L_653_arg0, L_656_, {
+            Size = L_654_arg1
+        })
+        return L_657_
+    end
+    L_51_.MouseButton1Click:Connect(function()
+        L_55_:Play()
+        game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.LeftControl, false, game)
+        local L_658_ = L_56_func(L_51_, UDim2.new(0, 60, 0, 60), 0.1)
+        local L_659_ = L_56_func(L_51_, UDim2.new(0, 50, 0, 50), 0.9)
+        L_658_:Play()
+        L_658_.Completed:Connect(function()
+            L_659_:Play()
+        end)
+    end)
+    L_51_.InputBegan:Connect(function(L_660_arg0)
+        if L_660_arg0.UserInputType == Enum.UserInputType.MouseButton1 or L_660_arg0.UserInputType == Enum.UserInputType.Touch then
+            local L_661_ = L_56_func(L_51_, UDim2.new(0, 40, 0, 40), 0.1)
+            L_661_:Play()
+        end
+    end)
+    L_51_.InputEnded:Connect(function(L_662_arg0)
+        if L_662_arg0.UserInputType == Enum.UserInputType.MouseButton1 or L_662_arg0.UserInputType == Enum.UserInputType.Touch then
+            local L_663_ = L_56_func(L_51_, UDim2.new(0, 55, 0, 55), 0.1)
+            L_663_:Play()
+            L_663_.Completed:Connect(function()
+                L_56_func(L_51_, UDim2.new(0, 50, 0, 50), 0.1):Play()
+            end)
+        end
+    end)
+    local L_57_ = false
+    local L_58_, L_59_, L_60_
+    local function L_61_func(L_664_arg0)
+        local L_665_ = L_664_arg0.Position - L_59_
+        local L_666_ = UDim2.new(L_60_.X.Scale, L_60_.X.Offset + L_665_.X, L_60_.Y.Scale, L_60_.Y.Offset + L_665_.Y)
+        L_51_.Position = L_666_
+    end
+    L_51_.InputBegan:Connect(function(L_667_arg0)
+        if L_667_arg0.UserInputType == Enum.UserInputType.MouseButton1 or L_667_arg0.UserInputType == Enum.UserInputType.Touch then
+            L_57_ = true
+            L_59_ = L_667_arg0.Position
+            L_60_ = L_51_.Position
+            L_667_arg0.Changed:Connect(function()
+                if L_667_arg0.UserInputState == Enum.UserInputState.End then
+                    L_57_ = false
+                end
+            end)
+        end
+    end)
+    L_51_.InputChanged:Connect(function(L_668_arg0)
+        if L_668_arg0.UserInputType == Enum.UserInputType.MouseMovement or L_668_arg0.UserInputType == Enum.UserInputType.Touch then
+            L_58_ = L_668_arg0
+        end
+    end)
+    L_52_.InputChanged:Connect(function(L_669_arg0)
+        if L_57_ and L_669_arg0 == L_58_ then
+            L_61_func(L_669_arg0)
+        end
+    end)
 local OldSize = UDim2.new(0, 500, 0, 300)
-Clicked_9.Activated:Connect(function()
-	CircleClick(Clicked_9, Mouse.X, Mouse.Y)
-	if Main.Size.Y.Offset <= 0 then
-		UIStroke.Enabled = true
-		TweenService:Create(Main, TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {Size = OldSize}):Play()
-	else
-		OldSize = Main.Size
-		UIStroke.Enabled = false
-		TweenService:Create(Main, TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {Size = UDim2.new(0, 0, 0, -0)}):Play()
-	end
+L_51_.MouseButton1Click:Connect(function()
+    CircleClick(L_51_, Mouse.X, Mouse.Y)
+    if Main.Size.Y.Offset <= 0 then
+        UIStroke.Enabled = true
+        TweenService:Create(Main, TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {Size = OldSize}):Play()
+    else
+        OldSize = Main.Size
+        UIStroke.Enabled = false
+        TweenService:Create(Main, TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {Size = UDim2.new(0, 0, 0, -0)}):Play()
+    end
 end)
 
-UIStroke_15.Parent = Clicked_9
-UIStroke_15.Color = Color3.fromRGB(255, 255, 255)
-UIStroke_15.Transparency = 0.840
 
 	Top.Name = "Top"
 	Top.Parent = Main
