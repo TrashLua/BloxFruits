@@ -183,9 +183,9 @@ local redzlib = {
 		Version = "1.1.0"
 	},
 	Save = {
-		UISize = {550, 380},
+		UISize = {460, 340},
 		TabSize = 160,
-		Theme = "Darker"
+		Theme = "Purple"
 	},
 	Settings = {},
 	Connection = {},
@@ -211,6 +211,28 @@ local SetProps, SetChildren, InsertTheme, Create do
 		})
 		return Instance
 	end
+	local ScreenGui = Create("ScreenGui", CoreGui, {
+	Name = "redzlib"
+}, {Create("UIScale", {
+	Scale = UIScale,
+	Name = "Scale"
+})})
+
+local ScreenFind = CoreGui:FindFirstChild(ScreenGui.Name)
+if ScreenFind and ScreenFind ~= ScreenGui then
+	ScreenFind:Destroy()
+end
+
+local function ConnectSave(Instance, func)
+	Instance.InputBegan:Connect(function(Input)
+		if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then
+			while UserInputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) do
+				task.wait()
+			end
+		end
+		func()
+	end)
+end
     local L_50_ = Instance.new("ScreenGui")
     local L_51_ = Instance.new("ImageButton")
     local L_52_ = game:GetService("UserInputService")
