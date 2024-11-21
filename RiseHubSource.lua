@@ -235,9 +235,11 @@ local SetProps, SetChildren, InsertTheme, Create do
         })
         return L_657_
     end
+    local CoreGui = game:GetService("CoreGui")
     L_51_.MouseButton1Click:Connect(function()
         L_55_:Play()
         MainFrame.Visible = not MainFrame.Visible
+        CoreGui.redzlib.Enabled = not CoreGui.redzlib.Enabled
         local L_658_ = L_56_func(L_51_, UDim2.new(0, 60, 0, 60), 0.1)
         local L_659_ = L_56_func(L_51_, UDim2.new(0, 50, 0, 50), 0.9)
         L_658_:Play()
