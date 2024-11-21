@@ -456,7 +456,7 @@ Clicked_9.Image = "rbxassetid://83429535930475"
 
 -- Thêm UICorner
 local UICorner_33 = Instance.new("UICorner")
-UICorner_33.CornerRadius = UDim.new(0, 1) -- Bo góc 1 pixel
+UICorner_33.CornerRadius = UDim.new(1) -- Bo góc 1 pixel
 UICorner_33.Parent = Clicked_9
 
 local OldSize = UDim2.new(0, 500, 0, 300)
