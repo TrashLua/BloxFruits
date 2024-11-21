@@ -449,14 +449,14 @@ function Library:AddWindows()
 Clicked_9.Name = "Clicked"
 Clicked_9.Parent = UIClose
 Clicked_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Clicked_9.BackgroundTransparency = 1
 Clicked_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Clicked_9.BorderSizePixel = 0
 Clicked_9.Size = UDim2.new(1, 0, 1, 0)
 Clicked_9.Image = "rbxassetid://83429535930475"
 
--- Thêm UICorner
 local UICorner_33 = Instance.new("UICorner")
-UICorner_33.CornerRadius = UDim.new(1, 0) -- Bo góc 1 pixel
+UICorner_33.CornerRadius = UDim.new(1, 0) 
 UICorner_33.Parent = Clicked_9
 
 local OldSize = UDim2.new(0, 500, 0, 300)
@@ -474,7 +474,7 @@ end)
 
 UIStroke_15.Parent = Clicked_9
 UIStroke_15.Color = Color3.fromRGB(255, 255, 255)
-UIStroke_15.Transparency = 1
+UIStroke_15.Transparency = 0.840
 
 	Top.Name = "Top"
 	Top.Parent = Main
