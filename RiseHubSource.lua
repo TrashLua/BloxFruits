@@ -166,26 +166,70 @@ local redzlib = {
 			["Color Text"] = Color3.fromRGB(245, 245, 245),
 			["Color Dark Text"] = Color3.fromRGB(190, 190, 190)
 		},
+		Clear = {
+			["Color Hub 1"] = ColorSequence.new({ColorSequenceKeypoint.new(0.00, Color3.fromRGB(230.5, 220, 210)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(32.5, 32.5, 32.5)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(230.5, 220, 210))}),
+			["Color Hub 2"] = Color3.fromRGB(230, 230, 230),
+			["Color Stroke"] = Color3.fromRGB(140, 140, 140),
+			["Color Theme"] = Color3.fromRGB(150, 150, 150),
+			["Color Text"] = Color3.fromRGB(24, 24, 24),
+			["Color Dark Text"] = Color3.fromRGB(50, 50, 50)
+		},
 		Purple = {
-			["Color Hub 1"] = ColorSequence.new({
-				ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27.5, 25, 30)),
-				ColorSequenceKeypoint.new(0.50, Color3.fromRGB(32.5, 32.5, 32.5)),
-				ColorSequenceKeypoint.new(1.00, Color3.fromRGB(27.5, 25, 30))
-			}),
+			["Color Hub 1"] = ColorSequence.new({ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27.5, 25, 30)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(32.5, 32.5, 32.5)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(27.5, 25, 30))}),
 			["Color Hub 2"] = Color3.fromRGB(30, 30, 30),
 			["Color Stroke"] = Color3.fromRGB(40, 40, 40),
 			["Color Theme"] = Color3.fromRGB(150, 0, 255),
 			["Color Text"] = Color3.fromRGB(240, 240, 240),
 			["Color Dark Text"] = Color3.fromRGB(180, 180, 180)
+		},
+		Red = {
+			["Color Hub 1"] = ColorSequence.new({ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27.5, 25, 30)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(32.5, 32.5, 32.5)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(27.5, 25, 30))}),
+			["Color Hub 2"] = Color3.fromRGB(30, 30, 30),
+			["Color Stroke"] = Color3.fromRGB(40, 40, 40),
+			["Color Theme"] = Color3.fromRGB(255, 15, 15),
+			["Color Text"] = Color3.fromRGB(240, 240, 240),
+			["Color Dark Text"] = Color3.fromRGB(180, 180, 180)
+		},
+		Yellow = {
+			["Color Hub 1"] = ColorSequence.new({ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27.5, 25, 30)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(32.5, 32.5, 32.5)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(27.5, 25, 30))}),
+			["Color Hub 2"] = Color3.fromRGB(30, 30, 30),
+			["Color Stroke"] = Color3.fromRGB(40, 40, 40),
+			["Color Theme"] = Color3.fromRGB(255, 255, 15),
+			["Color Text"] = Color3.fromRGB(240, 240, 240),
+			["Color Dark Text"] = Color3.fromRGB(180, 180, 180)
+		},
+		Green = {
+			["Color Hub 1"] = ColorSequence.new({ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27.5, 25, 30)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(32.5, 32.5, 32.5)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(27.5, 25, 30))}),
+			["Color Hub 2"] = Color3.fromRGB(30, 30, 30),
+			["Color Stroke"] = Color3.fromRGB(40, 40, 40),
+			["Color Theme"] = Color3.fromRGB(15, 255, 55),
+			["Color Text"] = Color3.fromRGB(240, 240, 240),
+			["Color Dark Text"] = Color3.fromRGB(180, 180, 180)
+		},
+		Pink = {
+			["Color Hub 1"] = ColorSequence.new({ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27.5, 25, 30)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(32.5, 32.5, 32.5)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(27.5, 25, 30))}),
+			["Color Hub 2"] = Color3.fromRGB(30, 30, 30),
+			["Color Stroke"] = Color3.fromRGB(40, 40, 40),
+			["Color Theme"] = Color3.fromRGB(250, 160, 160),
+			["Color Text"] = Color3.fromRGB(240, 240, 240),
+			["Color Dark Text"] = Color3.fromRGB(180, 180, 180)
+		},
+		Blue = {
+			["Color Hub 1"] = ColorSequence.new({ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27.5, 25, 30)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(32.5, 32.5, 32.5)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(27.5, 25, 30))}),
+			["Color Hub 2"] = Color3.fromRGB(30, 30, 30),
+			["Color Stroke"] = Color3.fromRGB(40, 40, 40),
+			["Color Theme"] = Color3.fromRGB(10, 225, 250),
+			["Color Text"] = Color3.fromRGB(240, 240, 240),
+			["Color Dark Text"] = Color3.fromRGB(180, 180, 180)
 		}
 	},
 	Info = {
-		Version = "1.1.0"
+		Version = "1.0.1"
 	},
 	Save = {
 		UISize = {460, 340},
 		TabSize = 160,
-		Theme = "Purple"
+		Theme = "Pink"
 	},
 	Settings = {},
 	Connection = {},
@@ -198,7 +242,7 @@ local redzlib = {
 }
 
 local ViewportSize = workspace.CurrentCamera.ViewportSize
-local UIScale = ViewportSize.Y / 450
+local UIScale = ViewportSize.Y / 460
 
 local Settings = redzlib.Settings
 local Flags = redzlib.Flags
