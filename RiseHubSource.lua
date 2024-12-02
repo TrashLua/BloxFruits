@@ -2054,7 +2054,7 @@ function redzlib:MakeWindow(Configs)
     L_50_.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
     L_51_.Parent = L_50_
     L_51_.Size = UDim2.new(0, 50, 0, 50)
-    L_51_.Position = UDim2.new(0.1, 0, 1, - 250)
+    L_51_.Position = UDim2.new(0, 0, 1, - 350)
     L_51_.BackgroundTransparency = 1
     L_51_.Image = "rbxassetid://83429535930475"
     L_54_.Parent = L_51_
